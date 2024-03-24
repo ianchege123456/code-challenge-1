@@ -1,0 +1,29 @@
+// Function to determine the grade based on the marks
+function calculateGrade(marks) {
+    if (marks > 79) {
+        return 'A';
+    } else if (marks >= 60 && marks <= 79) {
+        return 'B';
+    } else if (marks >= 50 && marks <= 59) {
+        return 'C';
+    } else if (marks >= 40 && marks <= 49) {
+        return 'D';
+    } else {
+        return 'E';
+    }
+}
+
+// Prompting the user to input student marks
+let studentMarks = prompt("Enter student marks (between 0 and 100):");
+
+// Converting input to a number
+studentMarks = parseFloat(studentMarks);
+
+// Checking if the input is a valid number between 0 and 100
+if (isNaN(studentMarks) || studentMarks < 0 || studentMarks > 100) {
+    console.log("Invalid input! Marks should be between 0 and 100.");
+} else {
+    // Calculating and displaying the grade
+    let grade = calculateGrade(studentMarks);
+    console.log("The grade for the student is:", grade);
+}
